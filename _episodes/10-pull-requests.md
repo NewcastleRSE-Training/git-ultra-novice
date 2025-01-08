@@ -22,22 +22,8 @@ For this lesson we will be working on the `countries` repository together.
 Open the github link for the `countries` repo provided by the instructor 
 in your browser window.
 
-![](../fig/github_screenshot_upstream_repo.png)
-
-> ## Repo owner differences
->
-> You may have noticed that the `countries` repo in this lesson's pictures 
-> is owned by the 'McMahonLab' organization and this doesn't match
-> the address you were given.
-> This is to be expected because this will differ depending on 
-> what organization your instructor used to setup the `countries` repo.
-> 
-> You will also see your username where the 'sstevens2' is in the pictures.
-> 
-{: .callout}
-
 Once at the `countries` repo, click the **Fork** button which can be found
-in the upper right hand conner of the window. 
+in the upper right hand corner of the window. 
 Forking the repository makes us each our own copy of the repo in our github 
 account which we can edit.
 

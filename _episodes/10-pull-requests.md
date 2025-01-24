@@ -22,135 +22,29 @@ For this lesson we will be working on the `countries` repository together.
 Open the github link for the `countries` repo provided by the instructor 
 in your browser window.
 
-Once at the `countries` repo, click the **Fork** button which can be found
-in the upper right hand corner of the window. 
-Forking the repository makes us each our own copy of the repo in our github 
-account which we can edit.
-
-![](../fig/github_screenshot_upstream_forking.png)
-
-Next we need to get this repo on our local computer and
-setup connections from our computer to both our forked version 
-and the authoritative version we forked it from.
-
-First we will **clone** the repo from our forked version.
-The clone command does two things:
-
-1. Copies the repo to your local computer
-2. Sets up a remote called 'origin' between your computer and the github repo
-
-Copy the web address for your forked version of repo 
-(from the web address line or click 'Clone and download' and copy that).
-
-![](../fig/github_screenshot_cloneOrigin.png)
-
-In terminal or Gitbash, navigate to a folder you'd like to hold this repo,
-we will place it on our `Desktop`.
-Once there you can use the `clone` command with the link you copied as the first argument.
-
-~~~
-$ cd ~/Desktop
-$ git clone https://github.com/USERNAME/countries.git
-~~~
-{: .bash}
-
-> ## Why does the command above say 'USERNAME'?
->
-> So that we can't copy the command above and accidentally clone someone else's
-> version of countries to our computer, the command above uses the placeholder
-> 'USERNAME' where you should put your own username if your copied from above
-> instead of copying the link from your browser and pasting it into the command.
-> 
-> 
-{: .callout}
-
-~~~
-Cloning into 'countries'...
-remote: Counting objects: 6, done.
-remote: Compressing objects: 100% (4/4), done.
-remote: Total 6 (delta 0), reused 6 (delta 0), pack-reused 0
-Unpacking objects: 100% (6/6), done.
-~~~
-{: .output}
-
-Next we will set up a connection or **remote** to the authoritative repository 
-(the original version given to you by your instructor).
-In your browser, you can go back this repo by clicking on the link that says 'forked from'
-in the upper left hand corner, under your username and repo name.
-
-Copy the web address for this repo 
-(from the web address line or click the 'clone and download' and copy that).
-
 ![](../fig/github_screenshot_upstream_repo.png)
 
-Then back in your terminal, navigate into the cloned repo and add the remote 
-connection to this repository.
-For this command we must give the remote a different nickname, 
-where our original remote is 'origin'
-this new remote will be called 'upstream'.
-You could give it a different nickname but 'upstream' is a common nickname for
-the authoritative repository.
-
-~~~
-$ cd countries
-$ git remote add upstream https://github.com/INSTRUCTOR-GIVEN/countries.git
-~~~
-{: .bash}
-
-> ## If you tried copying the command above...
+> ## Repo owner differences
 >
-> You will have to replace 'INSTRUCTOR-GIVEN' with the site your instructor
-> indicated at the beginning of this lesson. This will vary depending
-> on how your instructor set up for this lesson.
+> You may have noticed that the `countries` repo in this lesson's pictures 
+> is owned by the 'McMahonLab' organization and this doesn't match
+> the address you were given.
+> This is to be expected because this will differ depending on 
+> what organization your instructor used to setup the `countries` repo.
 > 
+> You will also see your username where the 'sstevens2' is in the pictures.
 > 
 {: .callout}
 
-At anytime you can see the remote connections your repo has using the following command:
+Once at the `countries` repo, click **Branch** which can be found above the list of files, on the left
+Previously, we created a branch on our local copy of a repository.  Now we are creating a branch in the online copy of the repository.
+Click the **New branch** button at the top right, and enter a name for your branch. Select your branch from the list to start working on it.
+Click the **<> Code** button at the top right and choose + Create new file.
 
-~~~
-$ git remote -v
-~~~
-{: .bash}
 
-~~~
-origin	https://github.com/USERNAME/countries.git (fetch)
-origin	https://github.com/USERNAME/countries.git (push)
-upstream	https://github.com/INSTRUCTOR-GIVEN/countries.git (fetch)
-upstream	https://github.com/INSTRUCTOR-GIVEN/countries.git (push)
-~~~
-{: .output}
+Insert image here showing 'branch' 
 
-Now that we have this setup done we will be able to suggest 
-changes to this repo using a pull request.
-Each person will add a new file with info about a new country in it.
-
-The instructor will now add a single file to the repository containing 
-information about the the United States.
-
-Next, we will update our local version of the repo to include the new file.
-We use a command called `pull` to bring these changes to our local repository.
-We must specify the remote and branch we want to pull from, in this case the 
-`upstream` remote's `main` branch.
-
-~~~
-$ git pull upstream main
-~~~
-{: .bash}
-
-Now your local version of the repo is updated but our forked version of the 
-repo is not yet up to date.
-You can reload your fork in github and see it does not contain the new 
-`united_states.txt` file.
-Now we need to update our forked version.
-To do so we can `push` the changes in our local version to the main branch of our fork, 
-called 'origin'.
-
-~~~
-$ git push origin main
-~~~
-{: .bash}
-
+!Carol Continue editing here!
 Now let's each add a new country to the repository.
 First let's make a new branch to work on.  This will keep our 'main' version
 in sync with the authoritative version of the repository.
@@ -158,32 +52,7 @@ We can name our branch descriptively after the country we will be adding.
 Mine will be `addFrance` since I'll be working with France.
 Please pick a different country and shout it out (or add it to the etherpad) 
 so no one else chooses the same one.
-We will create the branch and switch into in one step 
-as we learned earlier in the branching lesson.
 
-~~~
-$ git checkout -b addFrance
-~~~
-{: .bash}
-
-~~~
-Switched to a new branch 'addFrance'
-~~~
-{: .output}
-
-Finally before we proceed to adding the new file, we will double 
-check that we are on the right branch.
-
-~~~
-$ git branch
-~~~
-{: .bash}
-
-~~~
-* addFrance
-  main
-~~~
-{: .output}
 
 Next we will copy `united_states.txt` and change the name to the name of our chosen country.
 Then we can use nano to edit the contents to reflect the info of your chosen country.  

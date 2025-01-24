@@ -36,11 +36,6 @@ in your browser window.
 > 
 {: .callout}
 
-Once at the `countries` repo, click **Branch** which can be found above the list of files, on the left
-Previously, we created a branch on our local copy of a repository.  Now we are creating a branch in the online copy of the repository.
-Click the **New branch** button at the top right, and enter a name for your branch. Select your branch from the list to start working on it.
-Click the **<> Code** button at the top right and choose + Create new file.
-
 
 Insert image here showing 'branch' 
 
@@ -53,17 +48,22 @@ Mine will be `addFrance` since I'll be working with France.
 Please pick a different country and shout it out (or add it to the etherpad) 
 so no one else chooses the same one.
 
+Once at the `countries` repo, click **Branch** which can be found above the list of files, on the left
+Previously, we created a branch on our local copy of a repository.  Now we are creating a branch in the online copy of the repository.
+Click the **New branch** button at the top right, and enter a name for your branch. Select your branch from the list to start working on it.
 
-Next we will copy `united_states.txt` and change the name to the name of our chosen country.
+Next we will copy `united_states.md` and change the name to the name of our chosen country.
 Then we can use nano to edit the contents to reflect the info of your chosen country.  
 Hint: You may need to do some internet searching to fill in the information.
 
-~~~
-$ cp united_states.txt france.txt
-$ nano france.txt
-$ cat france.txt
-~~~
-{: .bash}
+Open the file navigator on the left
+Click the name of the file we want to copy
+Click the copy icon (Copy raw file) next to Raw at top right of the view/edit panel
+In the navigator, click the + (Add File) button at the top
+Type your country name into the box 'Name your file'
+Click then paste into the edit panel
+Change the text
+
 
 ~~~
 Population: 66,991,000
@@ -73,17 +73,9 @@ Capital: Paris
 
 Next let's add and commit the changes to the repo.
 
-~~~
-$ git add france.txt
-$ git commit -m "Added file on france"
-~~~
-{: .bash}
-
-~~~
-[addFrance 79a312a] Added file on france
- 1 file changed, 2 insertions(+), 2 deletions(-)
-~~~
-{: .output}
+Click **Commit Changes** at top right
+In the pop up box, enter an extended description and click **Commit Changes** button
+      _note the option to "Create a new branch for this commit and start a pull request" here_
 
 In some cases we may not have permission to push changes directly to the 
 upstream/authoritative repo or we might like our changes to be reviewed regardless 
@@ -91,34 +83,13 @@ of permissions, so we'll create a `pull request`.
 A `pull request` is a **request** for a member of the upstream repository to **pull** 
 our changes into the upstream repository from a `fork`, allowing them to request further 
 changes/improvements and make comments on the changes before doing so. 
-In order to create a `pull request`, we must push our new branch containing the
- changes we'd like to submit to the remote linked to our fork, `origin`, on GitHub.
-
-~~~
-$ git push origin addFrance
-~~~
-{: .bash}
-
-~~~
-Counting objects: 4, done.
-Delta compression using up to 4 threads.
-Compressing objects: 100% (4/4), done.
-Writing objects: 100% (4/4), 783 bytes | 0 bytes/s, done.
-Total 4 (delta 3), reused 0 (delta 0)
-remote: Resolving deltas: 100% (3/3), completed with 3 local objects.
-To https://github.com/USERNAME/countries.git
-   2037539..79a312a  addFrance -> addFrance
-~~~
-{: .output}
-
-Next go to your forked github version of the repo and reload the page.
-You won't see the new file added in the list of files but you will see 
-that you recently pushed a new branch to the repository.
 
 ![](../fig/github_screenshot_origin_master_addFrance.png)
 
 If you wish to view your new branch you can click on the 'Branch' drop down menu
 and select that branch.
+
+## Carol start editing here
 
 ![](../fig/github_screenshot_switch_github_branch.png)
 

@@ -84,45 +84,27 @@ A `pull request` is a **request** for a member of the upstream repository to **p
 our changes into the upstream repository from a `fork`, allowing them to request further 
 changes/improvements and make comments on the changes before doing so. 
 
-![](../fig/github_screenshot_origin_master_addFrance.png)
-
-If you wish to view your new branch you can click on the 'Branch' drop down menu
-and select that branch.
-
-## Carol start editing here
-
-![](../fig/github_screenshot_switch_github_branch.png)
-
-Then you should be able to view the files and commits in that branch.
-
-![](../fig/github_screenshot_origin_master_addFrance.png)
-
+Use the breadcrumb trail to navigate to the top level of the countries repository
 Github already suspects that we are going to want to make a pull request so we can click
 the 'Compare & pull request' button to start a new pull request.
 
 ![](../fig/github_screenshot_makingPR1.png)
 
-The base fork should be the upstream/authoritative version's main branch and then 
-the head fork should be the new branch of our fork.
-You can add more information into the comment section if there is anything you'd like 
+The base should be the main branch and compare to your branch
+You can add more a description if there is anything you'd like 
 to add for the person who reviews your suggestion.
 Then you can click the 'create pull request button' to submit the pull request.
 
 ![](../fig/github_screenshot_makingPR2.png)
 
 
-Now someone with privileges to the upstream repo can review it, give comments and
-suggestions, and merge it into the upstream version.
+Now someone with privileges to the repo can review it, give comments and
+suggestions, and merge it into the main branch.
 In our pull request they can see any messages we left or click and look at the commits that were made and see the files changed.
 
 Our collaborator reviewing the pull request noticed that 
 we forgot to add the largest city so let's add it and update our pull request.
 
-~~~
-$ nano france.txt
-$ cat france.txt
-~~~
-{: .bash}
 
 ~~~
 Population: 66,991,000
@@ -132,25 +114,6 @@ Largest City: Paris
 {: .output}
 
 Next we will add and commit these changes.
-Then we can push them to our fork of the repo.
-
-~~~
-$ git add france.txt
-$ git commit -m "Added largest city to france file"
-$ git push origin addFrance
-~~~
-{: .bash}
-
-~~~
-Counting objects: 3, done.
-Delta compression using up to 4 threads.
-Compressing objects: 100% (3/3), done.
-Writing objects: 100% (3/3), 387 bytes | 0 bytes/s, done.
-Total 3 (delta 0), reused 0 (delta 0)
-To https://github.com/USERNAME/countries.git
-   31aa2e3..609acfe  addFrance -> addFrance
-~~~
-{: .output}
 
 If we reload the pull request, we'll see that the new commit was added to the 
 pull request and the changes have been automatically updated.
@@ -161,12 +124,274 @@ if you want the changes to be considered together you should put them in the sam
 ![](../fig/github_screenshot_after_new_commit.png)
 
 When working with others we might encounter the conflicts, which we
-learned about earlier in branches.  Let's practice resolving conflicts when working
+learned about earlier in branches.  
+
+# Extension 1 (copied from main branch, not yet worked through)
+We don't have to work online in order to branch someone else's repository.  If we have permission, we can clone and branch locally as we did earlier. 
+NB some respositories don't allow you to clone.  In this case it's necessary to fork, see https://carpentries-incubator.github.io/git-novice-branch-pr/10-pull-requests/ for an example.
+We're allowed to clone this repository so let's get started:
+
+~~~
+$ cd ~/Desktop
+$ git clone https://github.com/RSE/countries.git 
+~~~
+{: .bash}
+_update this URL for the repo we're going to use?_
+
+~~~
+Cloning into 'countries'...
+remote: Counting objects: 6, done.
+remote: Compressing objects: 100% (4/4), done.
+remote: Total 6 (delta 0), reused 6 (delta 0), pack-reused 0
+Unpacking objects: 100% (6/6), done.
+~~~
+{: .output}
+
+_do we need to tlk about upstream remote?_
+
+Copy the web address for this repo 
+(from the web address line or click the 'clone and download' and copy that).
+
+![](../fig/github_screenshot_upstream_repo.png)
+
+Then back in your terminal, navigate into the cloned repo and add the remote 
+connection to this repository.
+For this command we must give the remote a different nickname, 
+where our original remote is 'origin'
+this new remote will be called 'upstream'.
+You could give it a different nickname but 'upstream' is a common nickname for
+the authoritative repository.
+
+~~~
+$ cd countries
+$ git remote add upstream https://github.com/INSTRUCTOR-GIVEN/countries.git
+~~~
+{: .bash}
+
+> ## If you tried copying the command above...
+>
+> You will have to replace 'INSTRUCTOR-GIVEN' with the site your instructor
+> indicated at the beginning of this lesson. This will vary depending
+> on how your instructor set up for this lesson.
+> 
+> 
+{: .callout}
+
+At anytime you can see the remote connections your repo has using the following command:
+
+~~~
+$ git remote -v
+~~~
+{: .bash}
+
+~~~
+origin	https://github.com/USERNAME/countries.git (fetch)
+origin	https://github.com/USERNAME/countries.git (push)
+upstream	https://github.com/INSTRUCTOR-GIVEN/countries.git (fetch)
+upstream	https://github.com/INSTRUCTOR-GIVEN/countries.git (push)
+~~~
+{: .output}
+
+Now that we have this setup done we will be able to suggest 
+changes to this repo using a pull request.
+Each person will add a new file with info about a new country in it.
+
+The instructor will now add a single file to the repository containing 
+information about the the United States.
+
+Next, we will update our local version of the repo to include the new file.
+We use a command called `pull` to bring these changes to our local repository.
+We must specify the remote and branch we want to pull from, in this case the 
+`upstream` remote's `main` branch.
+
+~~~
+$ git pull upstream main
+~~~
+{: .bash}
+
+To do so we can `push` the changes in our local version to the main branch of our repo, 
+called 'origin'.
+
+~~~
+$ git push origin main
+~~~
+{: .bash}
+
+Now let's each add a new country to the repository.
+First let's make a new branch to work on.  This will keep our 'main' version
+in sync with the authoritative version of the repository.
+We can name our branch descriptively after the country we will be adding.
+Mine will be `addFrance` since I'll be working with France.
+Please pick a different country and shout it out (or add it to the etherpad) 
+so no one else chooses the same one.
+We will create the branch and switch into in one step 
+as we learned earlier in the branching lesson.
+
+~~~
+$ git checkout -b addFrance
+~~~
+{: .bash}
+
+~~~
+Switched to a new branch 'addFrance'
+~~~
+{: .output}
+
+Finally before we proceed to adding the new file, we will double 
+check that we are on the right branch.
+
+~~~
+$ git branch
+~~~
+{: .bash}
+
+~~~
+* addFrance
+  main
+~~~
+{: .output}
+
+Next we will copy `united_states.txt` and change the name to the name of our chosen country.
+Then we can use nano to edit the contents to reflect the info of your chosen country.  
+Hint: You may need to do some internet searching to fill in the information.
+
+~~~
+$ cp united_states.txt france.txt
+$ nano france.txt
+$ cat france.txt
+~~~
+{: .bash}
+
+~~~
+Population: 66,991,000
+Capital: Paris
+~~~
+{: .output}
+
+Next let's add and commit the changes to the repo.
+
+~~~
+$ git add france.txt
+$ git commit -m "Added file on france"
+~~~
+{: .bash}
+
+~~~
+[addFrance 79a312a] Added file on france
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+~~~
+{: .output}
+
+As before, we can't or don't want to push changes directly to the main branch.
+We will create a `pull request`
+In order to create a `pull request`, we must push our new branch containing the
+ changes we'd like to submit to the remote `origin`, on GitHub.
+
+ ~~~
+$ git push origin addFrance
+~~~
+{: .bash}
+
+~~~
+Counting objects: 4, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (4/4), 783 bytes | 0 bytes/s, done.
+Total 4 (delta 3), reused 0 (delta 0)
+remote: Resolving deltas: 100% (3/3), completed with 3 local objects.
+To https://github.com/USERNAME/countries.git
+   2037539..79a312a  addFrance -> addFrance
+~~~
+{: .output}
+
+Next go to the online repo on GitHub and reload the page.
+You won't see the new file added in the list of files but you will see 
+that you recently pushed a new branch to the repository.
+
+If you wish to view your new branch you can click on the 'Branch' drop down menu
+and select that branch.
+
+![](../fig/github_screenshot_switch_github_branch.png)
+
+Then you should be able to view the files and commits in that branch.
+
+![](../fig/github_screenshot_origin_master_addFrance.png)
+
+Github already suspects that we are going to want to make a pull request so we can click
+the 'Compare & pull request' button to start a new pull request as we did earlier.
+
+### Extension 2 (not yet updated at all)
+Let's practice resolving conflicts when working
 collaboratively.
 
 We will continue to work in the `addFrance` branch from before and check we are
 in that branch before we start.
 
+
+Now let's each add a new country to the repository.
+First let's make a new branch to work on.  This will keep our 'main' version
+in sync with the authoritative version of the repository.
+We can name our branch descriptively after the country we will be adding.
+Mine will be `addFrance` since I'll be working with France.
+Please pick a different country and shout it out (or add it to the etherpad) 
+so no one else chooses the same one.
+We will create the branch and switch into in one step 
+as we learned earlier in the branching lesson.
+
+~~~
+$ git checkout -b addFrance
+~~~
+{: .bash}
+
+~~~
+Switched to a new branch 'addFrance'
+~~~
+{: .output}
+
+Finally before we proceed to adding the new file, we will double 
+check that we are on the right branch.
+
+~~~
+$ git branch
+~~~
+{: .bash}
+
+~~~
+* addFrance
+  main
+~~~
+{: .output}
+
+Next we will copy `united_states.txt` and change the name to the name of our chosen country.
+Then we can use nano to edit the contents to reflect the info of your chosen country.  
+Hint: You may need to do some internet searching to fill in the information.
+
+~~~
+$ cp united_states.txt france.txt
+$ nano france.txt
+$ cat france.txt
+~~~
+{: .bash}
+
+~~~
+Population: 66,991,000
+Capital: Paris
+~~~
+{: .output}
+
+Next let's add and commit the changes to the repo.
+
+~~~
+$ git add france.txt
+$ git commit -m "Added file on france"
+~~~
+{: .bash}
+
+~~~
+[addFrance 79a312a] Added file on france
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+~~~
+{: .output}
 
 ~~~
 $ git branch

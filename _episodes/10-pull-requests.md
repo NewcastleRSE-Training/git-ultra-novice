@@ -22,30 +22,29 @@ For this lesson we will be working on the `countries` repository together.
 Open the github link for the `countries` repo provided by the instructor 
 in your browser window.
 
-![](../fig/github_screenshot_upstream_repo.png)
+UPDATE INSERT IMAGE: GitHub browser window
 
 > ## Repo owner differences
 >
 > You may have noticed that the `countries` repo in this lesson's pictures 
-> is owned by the 'McMahonLab' organization and this doesn't match
+> is owned by the 'NclRSE-Training' organization and this doesn't match
 > the address you were given.
 > This is to be expected because this will differ depending on 
 > what organization your instructor used to setup the `countries` repo.
 > 
-> You will also see your username where the 'sstevens2' is in the pictures.
+> UPDATE:  You will also see your username where the 'XXXXXXX' is in the pictures.
 > 
 {: .callout}
 
 
-Insert image here showing 'branch' 
+UPDATE INSERT IMAGE: showing 'branch' like https://carpentries-incubator.github.io/git-novice-branch-pr/fig/github_screenshot_switch_github_branch.png
 
-!Carol Continue editing here!
 Now let's each add a new country to the repository.
 First let's make a new branch to work on.  This will keep our 'main' version
 in sync with the authoritative version of the repository.
 We can name our branch descriptively after the country we will be adding.
 Mine will be `addFrance` since I'll be working with France.
-Please pick a different country and shout it out (or add it to the etherpad) 
+Please pick a different country and shout it out (or add it to the collaborative document) 
 so no one else chooses the same one.
 
 Once at the `countries` repo, click **Branch** which can be found above the list of files, on the left
@@ -53,8 +52,9 @@ Previously, we created a branch on our local copy of a repository.  Now we are c
 Click the **New branch** button at the top right, and enter a name for your branch. Select your branch from the list to start working on it.
 
 Next we will copy `united_states.md` and change the name to the name of our chosen country.
-Then we can use nano to edit the contents to reflect the info of your chosen country.  
 Hint: You may need to do some internet searching to fill in the information.
+
+UPDATE INSERT IMAGE: show use of file navigator to edit
 
 Open the file navigator on the left
 Click the name of the file we want to copy
@@ -88,23 +88,21 @@ Use the breadcrumb trail to navigate to the top level of the countries repositor
 Github already suspects that we are going to want to make a pull request so we can click
 the 'Compare & pull request' button to start a new pull request.
 
-![](../fig/github_screenshot_makingPR1.png)
+UPDATE INSERT IMAGE: create pull request like https://carpentries-incubator.github.io/git-novice-branch-pr/fig/github_screenshot_makingPR1.png
 
 The base should be the main branch and compare to your branch
 You can add more a description if there is anything you'd like 
 to add for the person who reviews your suggestion.
 Then you can click the 'create pull request button' to submit the pull request.
 
-![](../fig/github_screenshot_makingPR2.png)
+UPDATE INSERT IMAGE: create PR2 like https://carpentries-incubator.github.io/git-novice-branch-pr/fig/github_screenshot_makingPR2.png
 
 
 Now someone with privileges to the repo can review it, give comments and
 suggestions, and merge it into the main branch.
 In our pull request they can see any messages we left or click and look at the commits that were made and see the files changed.
 
-Our collaborator reviewing the pull request noticed that 
-we forgot to add the largest city so let's add it and update our pull request.
-
+Our collaborator reviewing the pull request noticed that we forgot to add the largest city so let's add it and update our pull request.
 
 ~~~
 Population: 66,991,000
@@ -121,14 +119,11 @@ New commits pushed to the same branch are included in the previous pull request.
 If you want to suggest changes separately you need to make separate branches but 
 if you want the changes to be considered together you should put them in the same branch.
 
-![](../fig/github_screenshot_after_new_commit.png)
+UPDATE INSERT IMAGE: reviewer's view of pull request like https://carpentries-incubator.github.io/git-novice-branch-pr/fig/github_screenshot_after_new_commit.png
 
-When working with others we might encounter the conflicts, which we
-learned about earlier in branches.  
-
-# Extension 1 (copied from main branch, not yet worked through)
+# Extension 1 Working locally (copied from main branch, not yet worked through)
 We don't have to work online in order to branch someone else's repository.  If we have permission, we can clone and branch locally as we did earlier. 
-NB some respositories don't allow you to clone.  In this case it's necessary to fork, see https://carpentries-incubator.github.io/git-novice-branch-pr/10-pull-requests/ for an example.
+UPDATE REMOVE?: NB some respositories don't allow you to clone.  In this case it's necessary to fork, see https://carpentries-incubator.github.io/git-novice-branch-pr/10-pull-requests/ for an example.
 We're allowed to clone this repository so let's get started:
 
 ~~~

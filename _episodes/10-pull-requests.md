@@ -43,8 +43,8 @@ Now let's each add a new country to the repository.
 First let's make a new branch to work on.  This will keep our 'main' version
 in sync with the authoritative version of the repository.
 We can name our branch descriptively after the country we will be adding.
-Mine will be `addFrance` since I'll be working with France.
-Please pick a different country and shout it out (or add it to the collaborative document) 
+Mine will be `editMyCountry` since I'll be working with France.
+UPDATE EMPHASISE: Please pick a different country and shout it out (or add it to the collaborative document) 
 so no one else chooses the same one.
 
 Once at the `countries` repo, click **Branch** which can be found above the list of files, on the left
@@ -121,14 +121,18 @@ if you want the changes to be considered together you should put them in the sam
 
 UPDATE INSERT IMAGE: reviewer's view of pull request like https://carpentries-incubator.github.io/git-novice-branch-pr/fig/github_screenshot_after_new_commit.png
 
-# Extension 1 Working locally (copied from main branch, not yet worked through)
+Once your branch has been merged, it's good practice to delete it.
+
+UPDATE INSERT IMAGE: delete your branch
+
+# Extension 1 Working locally
 We don't have to work online in order to branch someone else's repository.  If we have permission, we can clone and branch locally as we did earlier. 
 UPDATE REMOVE?: NB some respositories don't allow you to clone.  In this case it's necessary to fork, see https://carpentries-incubator.github.io/git-novice-branch-pr/10-pull-requests/ for an example.
 We're allowed to clone this repository so let's get started:
 
 ~~~
 $ cd ~/Desktop
-$ git clone https://github.com/RSE/countries.git 
+$ git clone https://github.com/INSTRUCTOR-GIVEN/countries.git
 ~~~
 {: .bash}
 _update this URL for the repo we're going to use?_
@@ -147,11 +151,11 @@ _do we need to tlk about upstream remote?_
 Copy the web address for this repo 
 (from the web address line or click the 'clone and download' and copy that).
 
-![](../fig/github_screenshot_upstream_repo.png)
+UPDATE INSERT IMAGE like https://carpentries-incubator.github.io/git-novice-branch-pr/fig/github_screenshot_upstream_repo.png
 
 Then back in your terminal, navigate into the cloned repo and add the remote 
 connection to this repository.
-For this command we must give the remote a different nickname, 
+UPDATE - IS THIS CORRECT FOR OUR CASE? For this command we must give the remote a different nickname, 
 where our original remote is 'origin'
 this new remote will be called 'upstream'.
 You could give it a different nickname but 'upstream' is a common nickname for
@@ -189,46 +193,27 @@ upstream	https://github.com/INSTRUCTOR-GIVEN/countries.git (push)
 
 Now that we have this setup done we will be able to suggest 
 changes to this repo using a pull request.
-Each person will add a new file with info about a new country in it.
+Each person will update their country's file with a National Dish (food for which the country is famous).  
+Hint: It's fine to make something up or search the internet.
 
-The instructor will now add a single file to the repository containing 
-information about the the United States.
-
-Next, we will update our local version of the repo to include the new file.
-We use a command called `pull` to bring these changes to our local repository.
-We must specify the remote and branch we want to pull from, in this case the 
-`upstream` remote's `main` branch.
+Let's make sure we have the most up to date copy of the remote repository on GitHub
 
 ~~~
 $ git pull upstream main
 ~~~
 {: .bash}
 
-To do so we can `push` the changes in our local version to the main branch of our repo, 
-called 'origin'.
-
-~~~
-$ git push origin main
-~~~
-{: .bash}
-
-Now let's each add a new country to the repository.
-First let's make a new branch to work on.  This will keep our 'main' version
-in sync with the authoritative version of the repository.
-We can name our branch descriptively after the country we will be adding.
-Mine will be `addFrance` since I'll be working with France.
-Please pick a different country and shout it out (or add it to the etherpad) 
-so no one else chooses the same one.
+Please use the same country as before so no one else chooses the same one.
 We will create the branch and switch into in one step 
 as we learned earlier in the branching lesson.
 
 ~~~
-$ git checkout -b addFrance
+$ git checkout -b editMyCountry
 ~~~
 {: .bash}
 
 ~~~
-Switched to a new branch 'addFrance'
+Switched to a new branch 'editMyCountry'
 ~~~
 {: .output}
 
@@ -241,38 +226,35 @@ $ git branch
 {: .bash}
 
 ~~~
-* addFrance
+* editMyCountry
   main
 ~~~
 {: .output}
 
-Next we will copy `united_states.txt` and change the name to the name of our chosen country.
-Then we can use nano to edit the contents to reflect the info of your chosen country.  
-Hint: You may need to do some internet searching to fill in the information.
-
+Next use nano to edit the file for your chosen country.  
 ~~~
-$ cp united_states.txt france.txt
-$ nano france.txt
-$ cat france.txt
+$ nano MyCountry.md
+$ cat MyCountry.md
 ~~~
 {: .bash}
 
 ~~~
 Population: 66,991,000
 Capital: Paris
+National Dish: Pot-au-feu
 ~~~
 {: .output}
 
 Next let's add and commit the changes to the repo.
 
 ~~~
-$ git add france.txt
-$ git commit -m "Added file on france"
+$ git add MyCountry.md
+$ git commit -m "Added National dish for MyCountry"
 ~~~
 {: .bash}
 
 ~~~
-[addFrance 79a312a] Added file on france
+[editMyCountry 79a312a] Added National dish for MyCountry
  1 file changed, 2 insertions(+), 2 deletions(-)
 ~~~
 {: .output}
@@ -283,7 +265,7 @@ In order to create a `pull request`, we must push our new branch containing the
  changes we'd like to submit to the remote `origin`, on GitHub.
 
  ~~~
-$ git push origin addFrance
+$ git push origin editMyCountry
 ~~~
 {: .bash}
 
@@ -295,7 +277,7 @@ Writing objects: 100% (4/4), 783 bytes | 0 bytes/s, done.
 Total 4 (delta 3), reused 0 (delta 0)
 remote: Resolving deltas: 100% (3/3), completed with 3 local objects.
 To https://github.com/USERNAME/countries.git
-   2037539..79a312a  addFrance -> addFrance
+   2037539..79a312a  editMyCountry -> editMyCountry
 ~~~
 {: .output}
 
@@ -306,11 +288,14 @@ that you recently pushed a new branch to the repository.
 If you wish to view your new branch you can click on the 'Branch' drop down menu
 and select that branch.
 
-![](../fig/github_screenshot_switch_github_branch.png)
+UPDATE INSERT IMAGE: like https://carpentries-incubator.github.io/git-novice-branch-pr/fig/github_screenshot_switch_github_branch.png
 
 Then you should be able to view the files and commits in that branch.
 
-![](../fig/github_screenshot_origin_master_addFrance.png)
+UPDATE INSERT IMAGE: like https://carpentries-incubator.github.io/git-novice-branch-pr/fig/github_screenshot_makingPR1.png
 
 Github already suspects that we are going to want to make a pull request so we can click
 the 'Compare & pull request' button to start a new pull request as we did earlier.
+
+UPDATE INSERT IMAGE: like https://carpentries-incubator.github.io/git-novice-branch-pr/fig/github_screenshot_makingPR2.png
+

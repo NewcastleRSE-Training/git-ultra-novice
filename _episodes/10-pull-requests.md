@@ -88,17 +88,15 @@ GitHub will now indicate that merging of your branch into the `main` branch is b
 ![GitHub Merging Blocked](../fig/github-merging-blocked.png)
 
 Our collaborator reviewing the pull request noticed that we forgot to add the largest city, so let's add it and update our pull request.
+Edit the file again, as above, adding the largest city:
 
 ~~~
-Population: 66,991,000
-Capital: Paris
-Largest City: Paris
+- Population: 66,991,000
+- Capital: Paris
+- Largest City: Paris
 ~~~
 {: .output}
 
-Next we will add and commit the changes requested by the reviewer.
-
-![GitHub Files Changed View](../fig/github-files-changed-view.png)
 
 Having done that, if we reload the pull request we'll see that the new commit was added to the pull request and the changes have been automatically updated. New commits pushed to the same branch are included in the previous pull request. If you want to suggest changes separately you need to make separate branches but if you want the changes to be considered together you should put them in the same branch.
 

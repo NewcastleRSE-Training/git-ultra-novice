@@ -19,7 +19,7 @@ For this lesson we will be working on the `countries` repository together. Open 
 
 ![GitHub Browser Window](../fig/github-browser-window.png)
 
-> ## Repo owner differences
+> ## Repository owner differences
 >
 > The `countries` repository in this lesson's pictures 
 > may belong to a GitHub organisation which doesn't match
@@ -67,17 +67,17 @@ To make our new country file we will copy the contents of file `united_states.md
 ~~~
 {: .output}
 
-Click **Commit changes** at top right. In the pop up box, enter an extended description and click **Commit Changes** button. _Note that there is an option to "Create a new branch for this commit and start a pull request" here._
+Click **Commit changes** at top right. In the pop up box, enter an extended description and click the **Commit Changes** button.
 
-In many cases when working with GitHufb repositories we may not have permission to push changes directly to the upstream or authoritative repo or we might like our changes to be reviewed regardless of permissions, so we'll create a `pull request`. A `pull request` is a **request** for a member of the upstream repository to **pull** our changes into the upstream repository from a branch. This process allows the repository administrators to request further changes or improvements and make comments on the changes before accepting them.
+In many cases when working with GitHub repositories we may not have permission to push changes directly to the upstream or authoritative repositoryor we might like our changes to be reviewed regardless of permissions, so we'll create a `pull request`. A `pull request` is a **request** for a member of the upstream repository to **pull** our changes into the upstream repository from a branch. This process allows the repository administrators to request further changes or improvements and make comments on the changes before accepting them.
 
-Use the breadcrumb trail (three dots) to navigate to the top level of the countries repository. Github already suspects that we are going to want to make a pull request from our branch, so we can click the **Compare & pull request** button to start a new pull request.
+Click your repository name at the top of the page to return to the top level view. Github already suspects that we are going to want to make a pull request from our branch, so we can click the **Compare & pull request** button to start a new pull request.
 
 ![GitHub Offer Pull Request](../fig/github-offer-pull-request.png)
 
-In the next screen, *base* should be the main branch and *compare* should be your new branch. In the **Add a description** box you should explain the changes you have made so that the pull request reviewer can assess your contribution. In a software engineering environment this could involve completing a formal commit template containing information such as which Issues the change fixes, which features it implements, and which tests have been run to ensure the change functions correctly.
+In the Pull Request form, you will see *base* is main branch and *compare* is your new branch. In the **Add a description** box you should explain the changes you have made so that the pull request reviewer can assess your contribution. In a software engineering environment this could involve completing a formal commit template containing information such as which Issues the change fixes, which features it implements, and which tests have been run to ensure the change functions correctly.
 
-Normally you would request a **Reviewer** from the list of repository owners - we won't do this in this exercise however. Then you can click the **Create pull request** button to submit the pull request. Note that you can click on the down arrow to change the pull request type to a "draft" if necessary. Once you initiate the pull request, GitHub will do some checks to see whether the change creates a conflict. In this case, because your file is not being worked on by wnyone else, the checks should pass and GitHub will indicate that the change is ready to be merged into the `main` branch.
+Normally you would request a **Reviewer** from the list of repository owners - we won't do this in this exercise however. Then you can click the **Create pull request** button to submit the pull request. Note that you can click on the down arrow to change the pull request type to a "draft" if necessary. Once you initiate the pull request, GitHub will do some checks to see whether the change creates a conflict. In this case, because your file is not being worked on by anyone else, the checks should pass and GitHub will indicate that the change is ready to be merged into the `main` branch.
 
 ![GitHub Pull Request](../fig/github-pull-request.png)
 

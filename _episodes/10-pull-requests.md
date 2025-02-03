@@ -19,7 +19,7 @@ For this lesson we will be working on the `countries` repository together. Open 
 
 ![GitHub Browser Window](../fig/github-browser-window.png)
 
-> ## Repo owner differences
+> ## Repository owner differences
 >
 > The `countries` repository in this lesson's pictures 
 > may belong to a GitHub organisation which doesn't match
@@ -41,7 +41,7 @@ For this lesson we will be working on the `countries` repository together. Open 
 >
 {: .callout}
 
-The repository contains a list of Mardown files with some facts about a country. Each file is the name of a country and will contain the population of that country and its capital city. One country file is already in the repository and in this lesson each student will add a new country to the repository. However the you will not be able to commit changes directly to the main branch and will need to work in a new branch that you create.
+The repository contains a list of Markdown files with some facts about a country. Each file is the name of a country and will contain the population of that country and its capital city. One country file is already in the repository and in this lesson each student will add a new country to the repository. However, you will not be able to commit changes directly to the main branch and will need to work in a new branch that you create.
 
 First let's make a new branch to work on. This will keep our `main` branch
 in sync with the authoritative version of the repository. We will name our branch descriptively after the country we will be adding. The lesson uses a branch named `editMyCountry` but you should name yours more descriptively.
@@ -51,9 +51,13 @@ Within the `countries` repository, once you have accepted your collaboration inv
 
 ![GitHub Create A Branch](../fig/github-create-a-branch.png)
 
-To make our new country file we will copy the file `united_states.md` and change the name to the name of our chosen country. Hint: You may need to do some internet searching to fill in the information. Open the file navigator on the left, then click the name of the file you want to copy. Click the "copy" icon (**Copy raw file**) next to **Raw** at the top right of the view /edit panel. In the navigator, click the + (Add File) button at the top, then type your country name into the box **Name your file**. Click then paste into the edit panel, and change the text to reflect the details about your chosen country.
-
-![GitHub Add File In Nav](../fig/github-add-file-in-nav.png)
+To make our new country file we will copy the contents of file `united_states.md` and paste the contents into a new file with the name of our chosen country. _Hint: You may need to do some internet searching to fill in the information._   
+* Click the name of the file you want to copy. 
+* Click the "copy" icon (**Copy raw file**) next to **Raw** at the top right of the view /edit panel. 
+* In the file navigator on the left, click the + (Add File) button at the top
+  * Type your country name into the box **Name your file**
+  * Click then paste into the edit panel
+  * Change the text to reflect the details about your chosen country.
 
 ![GitHub Copy Raw File](../fig/github-copy-raw-file.png)
 
@@ -63,17 +67,17 @@ To make our new country file we will copy the file `united_states.md` and change
 ~~~
 {: .output}
 
-Click **Commit changes** at top right. In the pop up box, enter an extended description and click **Commit Changes** button. _Note that there is an option to "Create a new branch for this commit and start a pull request" here._
+Click **Commit changes** at top right. In the pop up box, enter an extended description and click the **Commit Changes** button.
 
-In many cases when working with GitHufb repositories we may not have permission to push changes directly to the upstream or authoritative repo or we might like our changes to be reviewed regardless of permissions, so we'll create a `pull request`. A `pull request` is a **request** for a member of the upstream repository to **pull** our changes into the upstream repository from a branch. This process allows the repository administrators to request further changes or improvements and make comments on the changes before accepting them.
+In many cases when working with GitHub repositories we may not have permission to push changes directly to the upstream or authoritative repositoryor we might like our changes to be reviewed regardless of permissions, so we'll create a `pull request`. A `pull request` is a **request** for a member of the upstream repository to **pull** our changes into the upstream repository from a branch. This process allows the repository administrators to request further changes or improvements and make comments on the changes before accepting them.
 
-Use the breadcrumb trail (three dots) to navigate to the top level of the countries repository. Github already suspects that we are going to want to make a pull request from our branch, so we can click the **Compare & pull request** button to start a new pull request.
+Click your repository name at the top of the page to return to the top level view. Github already suspects that we are going to want to make a pull request from our branch, so we can click the **Compare & pull request** button to start a new pull request.
 
 ![GitHub Offer Pull Request](../fig/github-offer-pull-request.png)
 
-In the next screen, *base* should be the main branch and *compare* should be your new branch. In the **Add a description** box you should explain the changes you have made so that the pull request reviewer can assess your contribution. In a software engineering environment this could involve completing a formal commit template containing information such as which Issues the change fixes, which features it implements, and which tests have been run to ensure the change functions correctly.
+In the Pull Request form, you will see *base* is main branch and *compare* is your new branch. In the **Add a description** box you should explain the changes you have made so that the pull request reviewer can assess your contribution. In a software engineering environment this could involve completing a formal commit template containing information such as which Issues the change fixes, which features it implements, and which tests have been run to ensure the change functions correctly.
 
-Normally you would request a **Reviewer** from the list of repository owners - we won't do this in this exercise however. Then you can click the **Create pull request** button to submit the pull request. Note that you can click on the down arrow to change the pull request type to a "draft" if necessary. Once you initiate the pull request, GitHub will do some checks to see whether the change creates a conflict. In this case, because your file is not being worked on by wnyone else, the checks should pass and GitHub will indicate that the change is ready to be merged into the `main` branch.
+Normally you would request a **Reviewer** from the list of repository owners - we won't do this in this exercise however. Then you can click the **Create pull request** button to submit the pull request. Note that you can click on the down arrow to change the pull request type to a "draft" if necessary. Once you initiate the pull request, GitHub will do some checks to see whether the change creates a conflict. In this case, because your file is not being worked on by anyone else, the checks should pass and GitHub will indicate that the change is ready to be merged into the `main` branch.
 
 ![GitHub Pull Request](../fig/github-pull-request.png)
 
@@ -84,17 +88,15 @@ GitHub will now indicate that merging of your branch into the `main` branch is b
 ![GitHub Merging Blocked](../fig/github-merging-blocked.png)
 
 Our collaborator reviewing the pull request noticed that we forgot to add the largest city, so let's add it and update our pull request.
+Edit the file again, as above, adding the largest city:
 
 ~~~
-Population: 66,991,000
-Capital: Paris
-Largest City: Paris
+- Population: 66,991,000
+- Capital: Paris
+- Largest City: Paris
 ~~~
 {: .output}
 
-Next we will add and commit the changes requested by the reviewer.
-
-![GitHub Files Changed View](../fig/github-files-changed-view.png)
 
 Having done that, if we reload the pull request we'll see that the new commit was added to the pull request and the changes have been automatically updated. New commits pushed to the same branch are included in the previous pull request. If you want to suggest changes separately you need to make separate branches but if you want the changes to be considered together you should put them in the same branch.
 
@@ -104,11 +106,17 @@ Now the reviewer will re-consider your changes and (hopefully!) accept them, mer
 
 ![GitHub Offer Delete Branch](../fig/github-offer-delete-branch.png)
 
-That's it! You created some new content for a repository which does not allow you to commit changes directly to the `main` branch. You did this by creating a new branch in GitHub, editing the file there, then committing it. You responded to a request for some re-work by the repository administrator, whoc then successfully merged your changes with the rest of the repository. Finally, you deleted your branch as it was no longer needed.
+That's it! You created some new content for a repository which does not allow you to commit changes directly to the `main` branch. You did this by creating a new branch in GitHub, editing the file there, then committing it. You responded to a request for some re-work by the repository administrator, who then successfully merged your changes with the rest of the repository. Finally, you deleted your branch as it was no longer needed.
 
 # Pull Requests - working locally
 We don't have to work online in order to create a pull request from a branch. As a collaborator on the project, you can clone and branch locally as you did earlier. Open up your console and make a clone of the `countries` repository.
 
+> ## Instead of copying the command below:
+>
+> You will have to replace '<ORGANISATION>' with the Organisation
+> your instructor provided you with at the beginning of this lesson.
+> 
+{: .callout}
 ~~~
 $ cd ~/Desktop
 $ git clone git@github.com:<ORGANISATION>/countries.git
@@ -138,13 +146,6 @@ origin	git@github.com:<ORGANISATION>/countries.git (push)
 ~~~
 {: .output}
 
-> ## If you tried copying the command above...
->
-> You will have to replace '<ORGANISATION>' with the Organisation
-> your instructor provided you with at the beginning of this lesson.
-> 
-{: .callout}
-
 Now that we have cloned the repository we will be able to suggest changes to this repository using a pull request. Each person will update their country's file with a National Dish (food for which the country is famous). Hint: It's fine to make something up or search the internet.
 
 Let's make sure we have the most up-to-date copy of the remote repository from GitHub.
@@ -157,12 +158,12 @@ $ git pull
 Please use the same country as before so no one else chooses the same one. We will create the branch and switch into it in one step as we learned earlier in the branching lesson.
 
 ~~~
-$ git checkout -b editMyCountry
+$ git checkout -b <branchName>
 ~~~
 {: .bash}
 
 ~~~
-Switched to a new branch 'editMyCountry'
+Switched to a new branch '<branchName>'
 ~~~
 {: .output}
 
@@ -175,15 +176,15 @@ $ git branch
 {: .bash}
 
 ~~~
-* editMyCountry
+* <branchName>
   main
 ~~~
 {: .output}
 
-Next use nano to edit the file for your chosen country.  
+Next use nano to edit the file for your chosen country, and add a National Dish.  
 ~~~
-$ nano MyCountry.md
-$ cat MyCountry.md
+$ nano <MyCountry>.md
+$ cat <MyCountry>.md
 ~~~
 {: .bash}
 
@@ -198,13 +199,13 @@ Next let's add and commit the changes to the repository.
 
 ~~~
 $ git status
-$ git add MyCountry.md
-$ git commit -m "Added National dish for MyCountry"
+$ git add <MyCountry>.md
+$ git commit -m "Added National dish for <MyCountry>"
 ~~~
 {: .bash}
 
 ~~~
-[editMyCountry 79a312a] Added National dish for MyCountry
+[<branchName> 79a312a] Added National dish for <MyCountry>
  1 file changed, 2 insertions(+), 2 deletions(-)
 ~~~
 {: .output}
@@ -217,15 +218,15 @@ $ git push
 {: .bash}
 
 ~~~
-fatal: The current branch editMyCountry has no upstream branch.
+fatal: The current branch <branchName> has no upstream branch.
 To push the current branch and set the remote as upstream, use
 
-    git push --set-upstream origin editMyCountry
+    git push --set-upstream origin <branchName>
 ~~~
 {: .output}
 
 ~~~
-$ git push origin editMyCountry
+$ git push origin <branchName>
 ~~~
 {: .bash}
 
@@ -238,14 +239,16 @@ Writing objects: 100% (3/3), 335 bytes | 335.00 KiB/s, done.
 Total 3 (delta 2), reused 0 (delta 0), pack-reused 0
 remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
 remote:
-remote: Create a pull request for 'editMyCountry' on GitHub by visiting:
-remote:      https://github.com/<ORGANISATION>/countries/pull/new/editMyCountry
+remote: Create a pull request for '<branchName>' on GitHub by visiting:
+remote:      https://github.com/<ORGANISATION>/countries/pull/new/<branchName>
 remote:
 To github.com:<ORGANISATION>/countries.git
- * [new branch]      editMyCountry -> editMyCountry
+ * [new branch]      <branchName> -> <branchName>
 ~~~
 {: .output}
 
 Next go to the online repository on GitHub and reload the page. You will see that you recently pushed a new branch to the repository. If you wish to view your new branch you can click on the branch drop down menu and select it. Then you should be able to view the files and commits in that branch.
+
+![GitHub Offer Pull Request](../fig/github-offer-pull-request.png)
 
 Github already suspects that we are going to want to make a pull request so we can click the **Compare & pull request** button to start a new pull request as we did earlier. The rest of the pull request process proceeds just as it did when working directly in GitHub. Note that pull requests as presented here are primarily a GitHub-based operation. It's rare that you will manage pull requests within `git` itself because that would involve your administering a repository directly that you allow others to connect to. Most of the time, we use Github or an equivalent repository system (such as GitLab or Bitbucket) to manage these sort of integration activities for us.

@@ -109,6 +109,12 @@ That's it! You created some new content for a repository which does not allow yo
 # Pull Requests - working locally
 We don't have to work online in order to create a pull request from a branch. As a collaborator on the project, you can clone and branch locally as you did earlier. Open up your console and make a clone of the `countries` repository.
 
+> ## Instead of copying the command below:
+>
+> You will have to replace '<ORGANISATION>' with the Organisation
+> your instructor provided you with at the beginning of this lesson.
+> 
+{: .callout}
 ~~~
 $ cd ~/Desktop
 $ git clone git@github.com:<ORGANISATION>/countries.git
@@ -137,13 +143,6 @@ origin	git@github.com:<ORGANISATION>/countries.git (fetch)
 origin	git@github.com:<ORGANISATION>/countries.git (push)
 ~~~
 {: .output}
-
-> ## If you tried copying the command above...
->
-> You will have to replace '<ORGANISATION>' with the Organisation
-> your instructor provided you with at the beginning of this lesson.
-> 
-{: .callout}
 
 Now that we have cloned the repository we will be able to suggest changes to this repository using a pull request. Each person will update their country's file with a National Dish (food for which the country is famous). Hint: It's fine to make something up or search the internet.
 
@@ -180,7 +179,7 @@ $ git branch
 ~~~
 {: .output}
 
-Next use nano to edit the file for your chosen country.  
+Next use nano to edit the file for your chosen country, and add a National Dish.  
 ~~~
 $ nano <MyCountry>.md
 $ cat <MyCountry>.md

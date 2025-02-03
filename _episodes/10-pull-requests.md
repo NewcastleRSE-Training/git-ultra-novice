@@ -157,12 +157,12 @@ $ git pull
 Please use the same country as before so no one else chooses the same one. We will create the branch and switch into it in one step as we learned earlier in the branching lesson.
 
 ~~~
-$ git checkout -b editMyCountry
+$ git checkout -b <branchName>
 ~~~
 {: .bash}
 
 ~~~
-Switched to a new branch 'editMyCountry'
+Switched to a new branch '<branchName>'
 ~~~
 {: .output}
 
@@ -175,15 +175,15 @@ $ git branch
 {: .bash}
 
 ~~~
-* editMyCountry
+* <branchName>
   main
 ~~~
 {: .output}
 
 Next use nano to edit the file for your chosen country.  
 ~~~
-$ nano MyCountry.md
-$ cat MyCountry.md
+$ nano <MyCountry>.md
+$ cat <MyCountry>.md
 ~~~
 {: .bash}
 
@@ -198,13 +198,13 @@ Next let's add and commit the changes to the repository.
 
 ~~~
 $ git status
-$ git add MyCountry.md
-$ git commit -m "Added National dish for MyCountry"
+$ git add <MyCountry>.md
+$ git commit -m "Added National dish for <MyCountry>"
 ~~~
 {: .bash}
 
 ~~~
-[editMyCountry 79a312a] Added National dish for MyCountry
+[<branchName> 79a312a] Added National dish for <MyCountry>
  1 file changed, 2 insertions(+), 2 deletions(-)
 ~~~
 {: .output}
@@ -217,15 +217,15 @@ $ git push
 {: .bash}
 
 ~~~
-fatal: The current branch editMyCountry has no upstream branch.
+fatal: The current branch <branchName> has no upstream branch.
 To push the current branch and set the remote as upstream, use
 
-    git push --set-upstream origin editMyCountry
+    git push --set-upstream origin <branchName>
 ~~~
 {: .output}
 
 ~~~
-$ git push origin editMyCountry
+$ git push origin <branchName>
 ~~~
 {: .bash}
 
@@ -238,14 +238,16 @@ Writing objects: 100% (3/3), 335 bytes | 335.00 KiB/s, done.
 Total 3 (delta 2), reused 0 (delta 0), pack-reused 0
 remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
 remote:
-remote: Create a pull request for 'editMyCountry' on GitHub by visiting:
-remote:      https://github.com/<ORGANISATION>/countries/pull/new/editMyCountry
+remote: Create a pull request for '<branchName>' on GitHub by visiting:
+remote:      https://github.com/<ORGANISATION>/countries/pull/new/<branchName>
 remote:
 To github.com:<ORGANISATION>/countries.git
- * [new branch]      editMyCountry -> editMyCountry
+ * [new branch]      <branchName> -> <branchName>
 ~~~
 {: .output}
 
 Next go to the online repository on GitHub and reload the page. You will see that you recently pushed a new branch to the repository. If you wish to view your new branch you can click on the branch drop down menu and select it. Then you should be able to view the files and commits in that branch.
+
+![GitHub Offer Pull Request](../fig/github-offer-pull-request.png)
 
 Github already suspects that we are going to want to make a pull request so we can click the **Compare & pull request** button to start a new pull request as we did earlier. The rest of the pull request process proceeds just as it did when working directly in GitHub. Note that pull requests as presented here are primarily a GitHub-based operation. It's rare that you will manage pull requests within `git` itself because that would involve your administering a repository directly that you allow others to connect to. Most of the time, we use Github or an equivalent repository system (such as GitLab or Bitbucket) to manage these sort of integration activities for us.

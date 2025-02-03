@@ -108,7 +108,7 @@ Now the reviewer will re-consider your changes and (hopefully!) accept them, mer
 
 ![GitHub Offer Delete Branch](../fig/github-offer-delete-branch.png)
 
-That's it! You created some new content for a repository which does not allow you to commit changes directly to the `main` branch. You did this by creating a new branch in GitHub, editing the file there, then committing it. You responded to a request for some re-work by the repository administrator, whoc then successfully merged your changes with the rest of the repository. Finally, you deleted your branch as it was no longer needed.
+That's it! You created some new content for a repository which does not allow you to commit changes directly to the `main` branch. You did this by creating a new branch in GitHub, editing the file there, then committing it. You responded to a request for some re-work by the repository administrator, who then successfully merged your changes with the rest of the repository. Finally, you deleted your branch as it was no longer needed.
 
 # Pull Requests - working locally
 We don't have to work online in order to create a pull request from a branch. As a collaborator on the project, you can clone and branch locally as you did earlier. Open up your console and make a clone of the `countries` repository.

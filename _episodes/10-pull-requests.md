@@ -41,7 +41,7 @@ For this lesson we will be working on the `countries` repository together. Open 
 >
 {: .callout}
 
-The repository contains a list of Mardown files with some facts about a country. Each file is the name of a country and will contain the population of that country and its capital city. One country file is already in the repository and in this lesson each student will add a new country to the repository. However the you will not be able to commit changes directly to the main branch and will need to work in a new branch that you create.
+The repository contains a list of Markdown files with some facts about a country. Each file is the name of a country and will contain the population of that country and its capital city. One country file is already in the repository and in this lesson each student will add a new country to the repository. However, you will not be able to commit changes directly to the main branch and will need to work in a new branch that you create.
 
 First let's make a new branch to work on. This will keep our `main` branch
 in sync with the authoritative version of the repository. We will name our branch descriptively after the country we will be adding. The lesson uses a branch named `editMyCountry` but you should name yours more descriptively.
@@ -51,9 +51,13 @@ Within the `countries` repository, once you have accepted your collaboration inv
 
 ![GitHub Create A Branch](../fig/github-create-a-branch.png)
 
-To make our new country file we will copy the file `united_states.md` and change the name to the name of our chosen country. Hint: You may need to do some internet searching to fill in the information. Open the file navigator on the left, then click the name of the file you want to copy. Click the "copy" icon (**Copy raw file**) next to **Raw** at the top right of the view /edit panel. In the navigator, click the + (Add File) button at the top, then type your country name into the box **Name your file**. Click then paste into the edit panel, and change the text to reflect the details about your chosen country.
-
-![GitHub Add File In Nav](../fig/github-add-file-in-nav.png)
+To make our new country file we will copy the contents of file `united_states.md` and paste the contents into a new file with the name of our chosen country. _Hint: You may need to do some internet searching to fill in the information._   
+* Click the name of the file you want to copy. 
+* Click the "copy" icon (**Copy raw file**) next to **Raw** at the top right of the view /edit panel. 
+* In the file navigator on the left, click the + (Add File) button at the top
+  * Type your country name into the box **Name your file**
+  * Click then paste into the edit panel
+  * Change the text to reflect the details about your chosen country.
 
 ![GitHub Copy Raw File](../fig/github-copy-raw-file.png)
 

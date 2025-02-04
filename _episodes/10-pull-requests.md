@@ -6,10 +6,11 @@ questions:
 - "What are pull requests for?"
 - "How can I make a pull request?"
 objectives:
-- "Define the terms clone, origin, remote, upstream"
 - "Understand how to make a pull request and what they are useful for"
+- "Review the terms clone, origin, remote, upstream"
+- "Review creating, working with and deleting branches"
 keypoints:
-- "Pull requests suggest changes to repos where you don't have privileges"
+- "Pull requests allow developers to propose changes to a repository where access to the main branch is restricted"
 ---
 
 
@@ -52,11 +53,11 @@ Within the `countries` repository, once you have accepted your collaboration inv
 ![GitHub Create A Branch](../fig/github-create-a-branch.png)
 
 To make our new country file we will copy the contents of file `united_states.md` and paste the contents into a new file with the name of our chosen country. _Hint: You may need to do some internet searching to fill in the information._   
-* Click the name of the file you want to copy. 
-* Click the "copy" icon (**Copy raw file**) next to **Raw** at the top right of the view /edit panel. 
-* In the file navigator on the left, click the + (Add File) button at the top
-  * Type your country name into the box **Name your file**
-  * Click then paste into the edit panel
+* Click the name of the file you want to copy.
+* Click the "copy" icon (**Copy raw file**) next to **Raw** at the top right of the view /edit panel. You'll see a small **Copied!** pop-up.
+* In the file navigator on the left, click the **+** (Add File) button at the top
+  * Type your country name into the box **Name your file...**.
+  * Click in the edit panel then paste the raw text you copied from the `united_states.md` file.
   * Change the text to reflect the details about your chosen country.
 
 ![GitHub Copy Raw File](../fig/github-copy-raw-file.png)
@@ -69,7 +70,16 @@ To make our new country file we will copy the contents of file `united_states.md
 
 Click **Commit changes** at top right. In the pop up box, enter an extended description and click the **Commit Changes** button.
 
-In many cases when working with GitHub repositories we may not have permission to push changes directly to the upstream or authoritative repositoryor we might like our changes to be reviewed regardless of permissions, so we'll create a `pull request`. A `pull request` is a **request** for a member of the upstream repository to **pull** our changes into the upstream repository from a branch. This process allows the repository administrators to request further changes or improvements and make comments on the changes before accepting them.
+> ## Correct branch?
+>
+> Did you remember to select the branch you just created as the
+> destination for your commit? If you didn't, you can either repeat the
+> process having selected the correct branch, or you can choose the
+> **Commit to new branch** option in the commit dialog box. You'll need to
+> remember to delete both branches later in this lesson.
+{: .callout}
+
+In many cases when working with GitHub repositories we may not have permission to push changes directly to the upstream or authoritative repository or we might like our changes to be reviewed regardless of permissions, so we'll create a `pull request`. A `pull request` is a **request** for a member of the upstream repository to **pull** our changes into the upstream repository from a branch. This process allows the repository administrators to request further changes or improvements and make comments on the changes before accepting them.
 
 Click your repository name at the top of the page to return to the top level view. Github already suspects that we are going to want to make a pull request from our branch, so we can click the **Compare & pull request** button to start a new pull request.
 

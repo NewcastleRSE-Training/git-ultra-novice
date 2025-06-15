@@ -273,7 +273,7 @@ We need to use SSH for authentication, so click on the 'SSH' link to change the 
 {: .callout}
 
 
-Now that we've created our key pair, with the private key on our local computer and Github holding the public key, we can link out local repository to Github. Copy the SSH URL from the browser, go into the local `recipes` repository, and run this command:
+Now that we've created our key pair, with the private key on our local computer and Github holding the public key, we can link out local repository to Github. Click your avatar at top right and then "Your Repositories" to find the "recipes" repository you just created. Copy the SSH URL from the browser, go into the local `recipes` repository, and run this command:
 
 ~~~
 $ git remote add origin git@github.com/alflin/recipes.git

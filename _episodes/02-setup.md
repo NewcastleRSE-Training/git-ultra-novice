@@ -16,6 +16,7 @@ we need to configure a few things. Below are a few examples
 of configurations we will set as we get started with Git:
 
 *   our name and email address,
+*   correct the name for the main branch of a repository
 *   what our preferred text editor is,
 *   and that we want to use these settings globally (i.e. for every project).
 
@@ -26,6 +27,7 @@ Alfredo sets up his new laptop:
 ~~~
 $ git config --global user.name "Alfredo Linguini"
 $ git config --global user.email "a.linguini@ratatouille.fr"
+$ git config --global init.defaltBranch main
 ~~~
 {: .language-bash}
 
@@ -38,6 +40,8 @@ another Git host server
 in a later lesson will include this information.
 
 For these lessons, we will be interacting with [GitHub](https://github.com/) and so the email address used should be the same as the one used when setting up your GitHub account. If you are concerned about privacy, please review [GitHub's instructions for keeping your email address private][git-privacy]. 
+
+We set the default branch name to `main` because the is the community standard name for the initial branch of your project, and GitHub will only accept projects with an initial branch called 'main'.
 
 >## Keeping your email private
 >

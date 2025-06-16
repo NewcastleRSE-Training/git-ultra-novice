@@ -9,7 +9,9 @@ objectives:
 - "Push to or pull from a remote repository."
 keypoints:
 - "A local Git repository can be connected to one or more remote repositories."
-- "Use the HTTPS protocol to connect to remote repositories until you have learned how to set up SSH."
+- "Use the SSH protocol to connect to remote repositories."
+- "Private key is PRIVATE!  Keep it safe and only ever give out your Public key, usually ending .pub"
+- "`git commit` stores changes in your local repository"
 - "`git push` copies changes from a local repository to a remote repository."
 - "`git pull` copies changes from a remote repository to a local repository."
 ---

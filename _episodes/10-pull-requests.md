@@ -13,7 +13,7 @@ keypoints:
 - "Pull requests allow developers to propose changes to a repository where access to the main branch is restricted"
 ---
 
-Instructor Note: see [README.md]({{page.root/README.md}}) for countries repository
+Instructor Note: see [README.md](../README.md) for countries repository
 
 Pull requests are a great way to collaborate with others using github. Instead of making modifications directly to the main branch of a repository, you can propose a set of changes in a new branch. This can be useful if you don't have permission to modify a repository directly or you want someone else to review your changes.
 
